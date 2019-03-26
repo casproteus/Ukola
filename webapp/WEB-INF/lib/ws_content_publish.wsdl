@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservices.ukola.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservices.ukola.com" xmlns:intf="http://webservices.ukola.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+
+   <wsdl:message name="publishNewsResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="publishNewsRequest">
+
+      <wsdl:part name="in0" type="soapenc:string"/>
+
+      <wsdl:part name="in1" type="soapenc:string"/>
+
+      <wsdl:part name="in2" type="soapenc:string"/>
+
+      <wsdl:part name="in3" type="soapenc:string"/>
+
+      <wsdl:part name="in4" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="IPublishContent">
+
+      <wsdl:operation name="publishNews" parameterOrder="in0 in1 in2 in3 in4">
+
+         <wsdl:input message="impl:publishNewsRequest" name="publishNewsRequest"/>
+
+         <wsdl:output message="impl:publishNewsResponse" name="publishNewsResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ws_content_publishSoapBinding" type="impl:IPublishContent">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="publishNews">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="publishNewsRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservices.ukola.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="publishNewsResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservices.ukola.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="IPublishContentService">
+
+      <wsdl:port binding="impl:ws_content_publishSoapBinding" name="ws_content_publish">
+
+         <wsdlsoap:address location="http://localhost:8080/services/ws_content_publish"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

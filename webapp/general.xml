@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<General>
+	<Job_Run>
+		<Total_Job>180</Total_Job>
+		<Pass>100</Pass>
+		<Fail>50</Fail>
+		<Wait>30</Wait>
+	</Job_Run>
+	<System>
+		<OS>Windows</OS>
+		<DU_Version>6.0.10 build 4</DU_Version>
+		<Total_Memory>2.0G</Total_Memory>
+		<Total_Disk>20G</Total_Disk>
+		<CPU>2.3G_Hz</CPU>
+		<CPU_Usage>70%</CPU_Usage>
+		<Memory_Usage>30%</Memory_Usage>
+		<Disk>80%</Disk>
+	</System>
+</General>

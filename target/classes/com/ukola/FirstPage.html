@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:wicket="http://wicket.apache.org/">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="author" content="Aaron Ganschow" />
+<meta name="description"
+	content="A simple blog interface for not so simple blogs." />
+
+<title wicket:id="pageTitle">REPORT - version 1</title>
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="-1" />
+<wicket:head>
+	<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="jscharts.js"></script>
+</wicket:head>
+
+<link rel="stylesheet" href="./css/style.css" type="text/css"
+	media="screen">
+
+</head>
+<body>
+	<div class="wrapper">
+		<div class="container">
+
+			<div class="icon">
+				<img src="images/hand_logo.gif" width="120" height="120" />
+			</div>
+			<div id="title">
+				<h1>
+					<img src="images/dd.gif" alt="test" width="479" height="90">
+				</h1>
+				<div id="navigation">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+						wicket:id="selectedTime"></span>
+					<ul>
+						<li style="width: 120px">
+							<div id="searchBar">
+								<span
+									style="float: right; padding-right: 5px; padding-top: 15px;">
+									<a href="#" wicket:id="GoDetail">Forward >></a>
+								</span>
+							</div>
+						</li>
+						<li>
+							<div id="searchBar">
+								<span
+									style="float: right; padding-right: 5px; padding-top: 15px;">
+									<a href="#" wicket:id="refreshLink">[ Refresh ]</a>
+								</span>
+							</div>
+						</li>
+						<li>
+							<div id="searchBar">
+								<span
+									style="float: right; padding-right: 5px; padding-top: 15px;">
+									<label>&lt;&lt; Back</label>
+								</span>
+							</div>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+
+			<div id="body">
+				<div class="sidebar">
+					<h3>Folder Names</h3>
+					<div class="content">
+						<div id="ban" wicket:id="banner">
+							<div style="clear: both;">
+								<span style="float: left; padding-left: 5px; padding-top: 5px;">
+									<span wicket:id="timefolders"> <a wicket:id="link">
+											<span wicket:id="label"></span><br />
+									</a></span>
+								</span><br class="clear" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="content">
+					<div>
+						<label style="color: #e5ebdf" wicket:id="v1" id="v1"></label> <label
+							style="color: #e5ebdf" wicket:id="vv1" id="vv1"></label> <label
+							style="color: #e5ebdf" wicket:id="vvv1" id="vvv1"></label>
+					</div>
+
+					<div id="chartcontainer">
+						This area will be replaced by a Chart!
+						<script type="text/javascript">
+							var myData = new Array(
+									[
+											'Actual Run',
+											Number(document
+													.getElementById("v1").innerHTML) ],
+									[
+											'Running',
+											Number(document
+													.getElementById("vv1").innerHTML) ],
+									[
+											'Waiting',
+											Number(document
+													.getElementById("vvv1").innerHTML) ]);
+							var myChart = new JSChart('chartcontainer', 'pie');
+							myChart.setDataArray(myData);
+							var myColors = new Array('#0000FA', '#F89900',
+									'#944BEE');
+							myChart.colorizePie(myColors);
+
+							myChart.setSize(400, 300);
+
+							myChart.setTitleColor('#465052');
+							var tltlEE = "Statistic of Automation";
+							myChart.setTitle(tltlEE);
+							myChart.setTitleFontSize(14);
+
+							myChart.setPieUnitsFontSize(12);
+							myChart.setPieValuesFontSize(12);
+
+							//myChart.set3D(true);
+							//myChart.setPieAngle(60);
+							//myChart.setPieDepth(30);
+
+							myChart.draw();
+						</script>
+					</div>
+				</div>
+				<div class="content"
+					style="background: #E5EBDF; overflow: scroll; height: 470px; width: 560px; font-size: .8em; position: absolute; left: 620px; top: 170px; padding: 10px; letter-spacing: 0em; color: #0000FA;">
+					<div id="rightInfoArea" wicket:id="rightInfoArea">
+						<div style="clear: both;">
+							<span style="float: left; padding-left: 5px; padding-top: 5px;">
+								<span wicket:id="infomation"></span>
+							</span><br class="clear" />
+						</div>
+					</div>
+				</div>
+				<br class="clear" />
+			</div>
+			<br class="clear" />
+		</div>
+
+		<div id="footer">
+			<div id="footBody">
+				<div class="container">
+
+					<div class="content"></div>
+				</div>
+				<div class="clear"></div>
+				<div id="copyright">
+					<div class="container">
+						&copy; Copyright 2012 <a href="http://www.orsyp.com//">ORSYP</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

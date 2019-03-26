@@ -1,0 +1,204 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (oops/constantPoolOop.hpp:305), pid=14156, tid=17716
+#  guarantee(tag_at(which).is_klass()) failed: Corrupted constant pool
+#
+# JRE version: 6.0_32-b05
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (20.7-b02 mixed mode windows-amd64 compressed oops)
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000000813b800):  JavaThread "qtp63243527-21" [_thread_in_vm, id=17716, stack(0x000000000a060000,0x000000000a160000)]
+
+Stack: [0x000000000a060000,0x000000000a160000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.lang.Class.getEnclosingMethod0()[Ljava/lang/Object;+0
+j  java.lang.Class.getEnclosingMethodInfo()Ljava/lang/Class$EnclosingMethodInfo;+1
+j  java.lang.Class.getEnclosingClass()Ljava/lang/Class;+1
+j  java.lang.Class.getSimpleBinaryName()Ljava/lang/String;+1
+j  java.lang.Class.getSimpleName()Ljava/lang/String;+34
+j  java.lang.Class.isAnonymousClass()Z+3
+j  org.apache.wicket.util.lang.Classes.simpleName(Ljava/lang/Class;)Ljava/lang/String;+7
+j  org.apache.wicket.MarkupContainer.toString(Z)Ljava/lang/String;+18
+j  org.apache.wicket.MarkupContainer.toString()Ljava/lang/String;+2
+j  java.lang.String.valueOf(Ljava/lang/Object;)Ljava/lang/String;+10
+j  java.lang.StringBuilder.append(Ljava/lang/Object;)Ljava/lang/StringBuilder;+2
+j  org.apache.wicket.Page$3.component(Lorg/apache/wicket/Component;Lorg/apache/wicket/util/visit/IVisit;)V+76
+j  org.apache.wicket.Page$3.component(Ljava/lang/Object;Lorg/apache/wicket/util/visit/IVisit;)V+6
+j  org.apache.wicket.util.visit.Visits.visitChildren(Ljava/lang/Iterable;Lorg/apache/wicket/util/visit/IVisitor;Lorg/apache/wicket/util/visit/IVisitFilter;Lorg/apache/wicket/util/visit/Visit;)V+63
+j  org.apache.wicket.util.visit.Visits.visitChildren(Ljava/lang/Iterable;Lorg/apache/wicket/util/visit/IVisitor;Lorg/apache/wicket/util/visit/IVisitFilter;)Ljava/lang/Object;+12
+j  org.apache.wicket.util.visit.Visits.visitChildren(Ljava/lang/Iterable;Lorg/apache/wicket/util/visit/IVisitor;)Ljava/lang/Object;+5
+j  org.apache.wicket.MarkupContainer.visitChildren(Lorg/apache/wicket/util/visit/IVisitor;)Ljava/lang/Object;+2
+j  org.apache.wicket.Page.checkRendering(Lorg/apache/wicket/MarkupContainer;)V+46
+j  org.apache.wicket.Page.onAfterRender()V+6
+j  org.apache.wicket.markup.html.WebPage.onAfterRender()V+1
+j  org.apache.wicket.Component.afterRender()V+12
+j  org.apache.wicket.Component.render()V+57
+j  org.apache.wicket.Page.renderPage()V+17
+j  org.apache.wicket.request.handler.render.WebPageRenderer.renderPage(Lorg/apache/wicket/request/Url;Lorg/apache/wicket/request/cycle/RequestCycle;)Lorg/apache/wicket/protocol/http/BufferedWebResponse;+56
+j  org.apache.wicket.request.handler.render.WebPageRenderer.respond(Lorg/apache/wicket/request/cycle/RequestCycle;)V+165
+j  org.apache.wicket.core.request.handler.RenderPageRequestHandler.respond(Lorg/apache/wicket/request/IRequestCycle;)V+21
+j  org.apache.wicket.request.cycle.RequestCycle$HandlerExecutor.respond(Lorg/apache/wicket/request/IRequestHandler;)V+13
+j  org.apache.wicket.request.RequestHandlerStack.execute(Lorg/apache/wicket/request/IRequestHandler;)V+21
+j  org.apache.wicket.request.cycle.RequestCycle.execute(Lorg/apache/wicket/request/IRequestHandler;)V+21
+j  org.apache.wicket.request.cycle.RequestCycle.processRequest()Z+27
+j  org.apache.wicket.request.cycle.RequestCycle.processRequestAndDetach()Z+1
+j  org.apache.wicket.protocol.http.WicketFilter.processRequest(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)Z+212
+j  org.apache.wicket.protocol.http.WicketFilter.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;Ljavax/servlet/FilterChain;)V+4
+j  org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(Ljavax/servlet/ServletRequest;Ljavax/servlet/ServletResponse;)V+100
+j  org.eclipse.jetty.servlet.ServletHandler.doHandle(Ljava/lang/String;Lorg/eclipse/jetty/server/Request;Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V+197
+j  org.eclipse.jetty.server.handler.ScopedHandler.handle(Ljava/lang/String;Lorg/eclipse/jetty/server/Request;Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V+25
+j  org.eclipse.jetty.security.SecurityHandler.handle(Ljava/lang/String;Lorg/eclipse/jetty/server/Request;Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V+570
+j  org.eclipse.jetty.server.session.SessionHandler.doHandle(Ljava/lang/String;Lorg/eclipse/jetty/server/Request;Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V+68
+j  org.eclipse.jetty.server.handler.ContextHandler.doHandle(Ljava/lang/String;Lorg/eclipse/jetty/server/Request;Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V+206
+j  org.eclipse.jetty.servlet.ServletHandler.doScope(Ljava/lang/String;Lorg/eclipse/jetty/server/Request;Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V+277
+j  org.eclipse.jetty.server.session.SessionHandler.doScope(Ljava/lang/String;Lorg/eclipse/jetty/server/Request;Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V+233
+j  org.eclipse.jetty.server.handler.ContextHandler.doScope(Ljava/lang/String;Lorg/eclipse/jetty/server/Request;Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V+416
+j  org.eclipse.jetty.server.handler.ScopedHandler.handle(Ljava/lang/String;Lorg/eclipse/jetty/server/Request;Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V+13
+j  org.eclipse.jetty.server.handler.HandlerWrapper.handle(Ljava/lang/String;Lorg/eclipse/jetty/server/Request;Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V+23
+j  org.eclipse.jetty.server.Server.handle(Lorg/eclipse/jetty/server/AbstractHttpConnection;)V+134
+j  org.eclipse.jetty.server.AbstractHttpConnection.handleRequest()V+222
+j  org.eclipse.jetty.server.BlockingHttpConnection.handleRequest()V+1
+j  org.eclipse.jetty.server.AbstractHttpConnection.headerComplete()V+448
+j  org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete()V+4
+j  org.eclipse.jetty.http.HttpParser.parseNext()I+2142
+j  org.eclipse.jetty.http.HttpParser.parseAvailable()Z+1
+j  org.eclipse.jetty.server.BlockingHttpConnection.handle()Lorg/eclipse/jetty/io/Connection;+51
+j  org.eclipse.jetty.server.bio.SocketConnector$ConnectorEndPoint.run()V+100
+j  org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(Ljava/lang/Runnable;)V+1
+j  org.eclipse.jetty.util.thread.QueuedThreadPool$3.run()V+47
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00000000084ab000 JavaThread "ModificationWatcher Task" daemon [_thread_blocked, id=15188, stack(0x000000000a260000,0x000000000a360000)]
+  0x0000000008059800 JavaThread "Wicket-PageSavingThread" daemon [_thread_blocked, id=15100, stack(0x000000000a160000,0x000000000a260000)]
+=>0x000000000813b800 JavaThread "qtp63243527-21" [_thread_in_vm, id=17716, stack(0x000000000a060000,0x000000000a160000)]
+  0x000000000813a800 JavaThread "qtp63243527-20" [_thread_blocked, id=17276, stack(0x0000000009f60000,0x000000000a060000)]
+  0x0000000008635000 JavaThread "qtp63243527-19" [_thread_in_native, id=17560, stack(0x0000000009e60000,0x0000000009f60000)]
+  0x0000000008632000 JavaThread "qtp63243527-18" [_thread_blocked, id=18228, stack(0x0000000009d60000,0x0000000009e60000)]
+  0x0000000007f2a000 JavaThread "qtp63243527-17" [_thread_blocked, id=18372, stack(0x0000000009c60000,0x0000000009d60000)]
+  0x0000000007f29800 JavaThread "qtp63243527-16" [_thread_blocked, id=16884, stack(0x0000000009b60000,0x0000000009c60000)]
+  0x0000000007f28800 JavaThread "qtp63243527-15 Acceptor0 SocketConnector@0.0.0.0:2008" [_thread_in_native, id=13768, stack(0x0000000009a60000,0x0000000009b60000)]
+  0x000000000813f800 JavaThread "qtp63243527-14" [_thread_blocked, id=14448, stack(0x0000000009960000,0x0000000009a60000)]
+  0x0000000007dad000 JavaThread "Thread-1" [_thread_in_native, id=16392, stack(0x0000000009860000,0x0000000009960000)]
+  0x0000000008169000 JavaThread "HashSessionScavenger-0" daemon [_thread_blocked, id=15820, stack(0x0000000008790000,0x0000000008890000)]
+  0x0000000006917000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=14884, stack(0x0000000007990000,0x0000000007a90000)]
+  0x0000000006910000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=18216, stack(0x0000000007890000,0x0000000007990000)]
+  0x000000000690c800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=16564, stack(0x0000000007790000,0x0000000007890000)]
+  0x00000000068fe800 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=16796, stack(0x0000000007690000,0x0000000007790000)]
+  0x00000000068fb000 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=14076, stack(0x0000000007590000,0x0000000007690000)]
+  0x00000000068f9000 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_blocked, id=17692, stack(0x0000000007390000,0x0000000007490000)]
+  0x00000000068a8000 JavaThread "Attach Listener" daemon [_thread_blocked, id=17036, stack(0x0000000006b90000,0x0000000006c90000)]
+  0x00000000068a2800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=16840, stack(0x0000000006a90000,0x0000000006b90000)]
+  0x000000000039d000 JavaThread "Finalizer" daemon [_thread_blocked, id=15220, stack(0x0000000006790000,0x0000000006890000)]
+  0x0000000000396800 JavaThread "Reference Handler" daemon [_thread_blocked, id=17304, stack(0x0000000006690000,0x0000000006790000)]
+  0x000000000029d000 JavaThread "main" [_thread_in_native, id=13696, stack(0x0000000002120000,0x0000000002220000)]
+
+Other Threads:
+  0x000000000038f000 VMThread [stack: 0x0000000006590000,0x0000000006690000] [id=15088]
+  0x0000000006938000 WatcherThread [stack: 0x0000000007a90000,0x0000000007b90000] [id=14100]
+
+VM state:synchronizing (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000000000029b210] Threads_lock - owner thread: 0x000000000038f000
+
+Heap
+ PSYoungGen      total 56832K, used 8650K [0x00000007c0960000, 0x00000007c48c0000, 0x0000000800000000)
+  eden space 48768K, 11% used [0x00000007c0960000,0x00000007c0f0df18,0x00000007c3900000)
+  from space 8064K, 35% used [0x00000007c3900000,0x00000007c3bc4978,0x00000007c40e0000)
+  to   space 8064K, 0% used [0x00000007c40e0000,0x00000007c40e0000,0x00000007c48c0000)
+ PSOldGen        total 129856K, used 0K [0x0000000741c00000, 0x0000000749ad0000, 0x00000007c0960000)
+  object space 129856K, 0% used [0x0000000741c00000,0x0000000741c00000,0x0000000749ad0000)
+ PSPermGen       total 21248K, used 18804K [0x000000073ca00000, 0x000000073dec0000, 0x0000000741c00000)
+  object space 21248K, 88% used [0x000000073ca00000,0x000000073dc5d108,0x000000073dec0000)
+
+Code Cache  [0x0000000002220000, 0x0000000002490000, 0x0000000005220000)
+ total_blobs=432 nmethods=167 adapters=226 free_code_cache=49446144 largest_free_block=9728
+
+Dynamic libraries:
+0x0000000000400000 - 0x000000000042f000 	C:\Program Files\Java\jre6\bin\javaw.exe
+0x0000000077840000 - 0x00000000779e9000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000077470000 - 0x000000007758f000 	C:\Windows\system32\kernel32.dll
+0x000007fefdc90000 - 0x000007fefdcfc000 	C:\Windows\system32\KERNELBASE.dll
+0x000007feff290000 - 0x000007feff36b000 	C:\Windows\system32\ADVAPI32.dll
+0x000007feff370000 - 0x000007feff40f000 	C:\Windows\system32\msvcrt.dll
+0x000007fefefd0000 - 0x000007fefefef000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007feff650000 - 0x000007feff77d000 	C:\Windows\system32\RPCRT4.dll
+0x0000000077020000 - 0x000000007711a000 	C:\Windows\system32\USER32.dll
+0x000007fefe1d0000 - 0x000007fefe237000 	C:\Windows\system32\GDI32.dll
+0x000007feffac0000 - 0x000007fefface000 	C:\Windows\system32\LPK.dll
+0x000007fefeff0000 - 0x000007feff0b9000 	C:\Windows\system32\USP10.dll
+0x000007fefdee0000 - 0x000007fefdf0e000 	C:\Windows\system32\IMM32.DLL
+0x000007feff160000 - 0x000007feff269000 	C:\Windows\system32\MSCTF.dll
+0x000000006d800000 - 0x000000006dfb8000 	C:\Program Files\Java\jre6\bin\server\jvm.dll
+0x000007fefde50000 - 0x000007fefde8b000 	C:\Windows\system32\WINMM.dll
+0x000000006d770000 - 0x000000006d77e000 	C:\Program Files\Java\jre6\bin\verify.dll
+0x000000006d3b0000 - 0x000000006d3d7000 	C:\Program Files\Java\jre6\bin\java.dll
+0x000000006d420000 - 0x000000006d454000 	C:\Program Files\Java\jre6\bin\jdwp.dll
+0x000000006d640000 - 0x000000006d648000 	C:\Program Files\Java\jre6\bin\npt.dll
+0x000000006d7c0000 - 0x000000006d7d2000 	C:\Program Files\Java\jre6\bin\zip.dll
+0x000000006d270000 - 0x000000006d279000 	C:\Program Files\Java\jre6\bin\dt_socket.dll
+0x000007feff420000 - 0x000007feff46d000 	C:\Windows\system32\WS2_32.dll
+0x000007feff410000 - 0x000007feff418000 	C:\Windows\system32\NSI.dll
+0x000007fefc130000 - 0x000007fefc145000 	C:\Windows\system32\NLAapi.dll
+0x000007fef85e0000 - 0x000007fef85f5000 	C:\Windows\system32\napinsp.dll
+0x000007fef8420000 - 0x000007fef8439000 	C:\Windows\system32\pnrpnsp.dll
+0x000007fefd1f0000 - 0x000007fefd245000 	C:\Windows\System32\mswsock.dll
+0x000007fefd0e0000 - 0x000007fefd13b000 	C:\Windows\system32\DNSAPI.dll
+0x000007fef8410000 - 0x000007fef841b000 	C:\Windows\System32\winrnr.dll
+0x000007fef8400000 - 0x000007fef8410000 	C:\Windows\system32\wshbth.dll
+0x000007fef8730000 - 0x000007fef875e000 	C:\Program Files\Common Files\Microsoft Shared\Windows Live\WLIDNSP.DLL
+0x0000000077a00000 - 0x0000000077a07000 	C:\Windows\system32\PSAPI.DLL
+0x000007feffad0000 - 0x000007feffb41000 	C:\Windows\system32\SHLWAPI.dll
+0x0000000072110000 - 0x0000000072136000 	C:\Program Files\Bonjour\mdnsNSP.dll
+0x000007fefb5c0000 - 0x000007fefb5e7000 	C:\Windows\system32\Iphlpapi.DLL
+0x000007fefb5b0000 - 0x000007fefb5bb000 	C:\Windows\system32\WINNSI.DLL
+0x000007fefb070000 - 0x000007fefb0c3000 	C:\Windows\System32\fwpuclnt.dll
+0x000007fef8720000 - 0x000007fef8728000 	C:\Windows\system32\rasadhlp.dll
+0x000007fefcc30000 - 0x000007fefcc37000 	C:\Windows\System32\wshtcpip.dll
+0x000000006d610000 - 0x000000006d627000 	C:\Program Files\Java\jre6\bin\net.dll
+0x000007fefd3e0000 - 0x000007fefd3e7000 	C:\Windows\System32\wship6.dll
+0x000007fefd4f0000 - 0x000007fefd507000 	C:\Windows\system32\CRYPTSP.dll
+0x000007fefcff0000 - 0x000007fefd037000 	C:\Windows\system32\rsaenh.dll
+0x000007fefcd60000 - 0x000007fefcd7e000 	C:\Windows\system32\USERENV.dll
+0x000007fefda70000 - 0x000007fefda7f000 	C:\Windows\system32\profapi.dll
+0x000007fefd960000 - 0x000007fefd96f000 	C:\Windows\system32\CRYPTBASE.dll
+0x000000006d630000 - 0x000000006d63b000 	C:\Program Files\Java\jre6\bin\nio.dll
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:51751 -Dfile.encoding=Cp1252 
+java_command: com.ukola.Start
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.6.0_32
+PATH=C:\Ruby193\bin;D:\Perl64\site\bin;D:\Perl64\bin;D:\Oracle\product\11.2.0\dbhome_2\bin;D:\Oracle\product\11.2.0\dbhome_1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\ThinkPad\Bluetooth Software\;C:\Program Files\ThinkPad\Bluetooth Software\syswow64;C:\Program Files\Broadcom\WHL\;C:\Program Files\Broadcom\WHL\syswow64;C:\Program Files\Broadcom\WHL\SysWow64\;C:\Program Files\Broadcom\WHL\SysWow64\syswow64;C:\Program Files (x86)\Common Files\Ulead Systems\MPEG;C:\Program Files\Common Files\Lenovo;C:\Program Files (x86)\Windows Live\Shared;C:\SWTOOLS\ReadyApps;C:\Program Files (x86)\Intel\Services\IPT\;C:\Program Files (x86)\Symantec\VIP Access Client\;C:\Program Files (x86)\Common Files\Lenovo;C:\Program Files (x86)\Lua\5.1;C:\Program Files (x86)\Lua\5.1\clibs; C:\Program Files\Java\jdk1.6.0_32\bin;C:\Poker\apache-ant-1.8.3\bin;C:\Poker\apache-maven-3.0.4\bin;C:\Program Files\Perforce;C:\Poker\platform\glassfish3\glassfish\bin;C:\Program Files (x86)\Graphviz 2.28\bin;C:\Program Files\Java\jdk1.6.0_32\bin;C:\Poker\spring-roo-1.2.2\bin
+USERNAME=tjiang
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 12463344k(7541840k free), swap 24924836k(18156628k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (20.7-b02) for windows-amd64 JRE (1.6.0_32-b05), built on Apr  5 2012 13:39:03 by "java_re" with MS VC++ 8.0 (VS2005)
+
+time: Sun Nov 18 10:03:35 2012
+elapsed time: 296 seconds
+
